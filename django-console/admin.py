@@ -59,7 +59,7 @@ def console_post(request):
         command = request.POST.get("command")
         if command:
             try:
-                output = "%c(@olive)%" + subprocess.check_output(command, shell=True) + "%c()"
+                output = "%c(@olive)%" + str(subprocess.check_output(command, shell=True)) + "%c()"
             except subprocess.CalledProcessError:
                 output = "%c(@red)%Oh! I'm sorry. Something went wrong.%c()"
         else:
