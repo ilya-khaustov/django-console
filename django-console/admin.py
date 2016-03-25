@@ -38,7 +38,7 @@ def console(request):
     except AttributeError:
         v2 = True
     except:
-        print "CONSOLE_WHITELIST needs to be a list of ip addresses to be allowed access"
+        print("CONSOLE_WHITELIST needs to be a list of ip addresses to be allowed access")
         v2 = True
     settings_variables = v1 and v2
     if request.user.is_superuser and settings_variables:
